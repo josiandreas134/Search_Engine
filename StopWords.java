@@ -54,7 +54,7 @@ public class StopWords
 
 		while(it.hasNext()){
 			String str = it.next().toString();
-			if(str.length() > 4 && !stopStem.isStopWord(str)){
+			if(str.length() => 4 && !stopStem.isStopWord(str)){
 				result.add(stopStem.stem(str));
 			}	
 		}
