@@ -55,7 +55,7 @@ public class Crawler
         bean.setURL(url);
         bean.setFilters(filter);
         
-	if (bean.getText() != null)
+	if (bean.getText() != null && bean.getText() != "")
 		result.add(bean.getText());
 	else
 		result.add("NA");
@@ -206,13 +206,11 @@ public class Crawler
         crawlers.add(this);
         for (int i = 0, k = 0; i < num; i++, k++) {
             Vector<String> links_k = (Vector<String>) crawlers.get(k).parser().get(4);
-	    System.out.println(k);
             for (int j = 0; j < links_k.size() && i < num; j++, i++) {
                 if (document.get(links_k.get(j).getBytes()) != null) {
                     String data = new String(document.get(links_k.get(j).getBytes()));
                     Crawler temp = new Crawler(links_k.get(j));
                     Vector<String> date = (Vector<String>) temp.parser().get(1);
-		    System.out.println(data + "--------" + date);                    
 		    if (data.substring(data.indexOf(";;;", 0), 10) != date.get(0))
                         crawlers.add(temp);
                     else 
