@@ -20,7 +20,7 @@ javac -cp lib/rocksdbjni-6.9.0-linux64.jar:./ -d ./ SearchEngine.java
 
 **_Executing_**
 
-2. Before executing the code, create a folder named 'db' to store rocksdb data.
+2. Before executing the code, create a folder named _db_ to store rocksdb data.
 ```bash
 mkdir db
 ```
