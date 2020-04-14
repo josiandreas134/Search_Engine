@@ -13,9 +13,9 @@ Make sure to download the Rocks DB library below and put them under `lib/`
 ## Follow this step to compile and execute the code:
 
 **_Compiling_**
-1. use following command to compile **SearchEngine.java**
+1. use following command to compile all the java files in the directory
 ```bash
-javac -cp lib/rocksdbjni-6.9.0-linux64.jar:./ -d ./ SearchEngine.java
+javac -cp lib/htmlparser.jar:/rocksdbjni-6.9.0-linux64.jar:./ -d ./ *.java
 ```
 
 **_Executing_**
