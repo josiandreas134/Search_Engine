@@ -15,7 +15,7 @@ Make sure to download the Rocks DB library below and put them under `lib/`
 **_Compiling_**
 1. use following command to compile all the java files in the directory
 ```bash
-javac -cp lib/htmlparser.jar:/rocksdbjni-6.9.0-linux64.jar:./ -d ./ *.java
+javac -cp lib/htmlparser.jar:lib/rocksdbjni-6.9.0-linux64.jar:./ -d ./ *.java
 ```
 
 **_Executing_**
