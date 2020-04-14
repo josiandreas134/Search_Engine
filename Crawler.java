@@ -58,7 +58,7 @@ public class Crawler
 	if (bean.getText() != null && bean.getText() != "")
 		result.add(bean.getText());
 	else
-		result.add("NA");
+		result.add("No Title");
 
         return result; 
     }
@@ -200,6 +200,8 @@ public class Crawler
     }
 
     public Vector<Crawler> crawlers(int num, RocksDB document) throws RocksDBException {
+	
+	num -= 1;
 
         // loop in the child links 
         Vector<Crawler> crawlers = new Vector<Crawler>();
