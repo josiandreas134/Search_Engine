@@ -56,6 +56,26 @@ public class DocumentIndexer {
         }
     }
 
+    public void addEntry(String s) throws RocksDBException
+    {
+        // Get the latest pageID
+        Integer lastID = 0;
+        RocksIterator iter = document.newIterator();
+        for(iter.seekToFirst(); iter.isValid(); iter.next()){
+            lastID++;
+        }
+
+        byte[] ID = document.get(s.getBytes());
+        
+        if (ID == null) {
+            lastID++;
+            ID = (Integer.toString(lastID)).getBytes();
+            // System.out.println("Added " + c.getURL() + " -> " + lastID);
+            document.put(s.getBytes(), ID);
+            invertedDocument.put(ID, s.getBytes());
+        }
+    }
+
     public void index_pages() throws RocksDBException
     {
         // Get the latest pageID
