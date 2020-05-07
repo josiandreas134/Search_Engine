@@ -91,17 +91,17 @@ public class ParentChildIndexer
                         byte[] temp = dbinverted.get(pageIDChild);
                         String existedString = new String(temp);
                         String pageIDString = new String(pageID);
-                        String put = existedString +"||"+ pageIDString;
+                        String put = existedString +";;"+ pageIDString;
                         dbinverted.put(pageIDChild,put.getBytes());
                     }
 
                     String string = new String(pageIDChild);
-                    asu += string + "||";
+                    asu += string + ";;";
                     string = null;
                 } 
                 else{
                     String string3 = new String(pageIDChild);
-                    asu += string3 + "||";
+                    asu += string3 + ";;";
                     string3 = null;
 
                     if(dbinverted.get(pageIDChild) == null){
@@ -111,7 +111,7 @@ public class ParentChildIndexer
                         byte[] temp = dbinverted.get(pageIDChild);
                         String existedString = new String(temp);
                         String pageIDString = new String(pageID);
-                        String put = existedString +"||"+ pageIDString;
+                        String put = existedString +";;"+ pageIDString;
                         dbinverted.put(pageIDChild,put.getBytes());
                     }
 
@@ -127,7 +127,7 @@ public class ParentChildIndexer
         // ADD YOUR CODES HERE
         RocksIterator iter = db.newIterator();                
         for(iter.seekToFirst(); iter.isValid(); iter.next()) {
-            System.out.println(new String(iter.key()) + " = \n" + new String(iter.value()));
+            System.out.println(new String(iter.key()) + " -> " + new String(iter.value()));
         }
 
     }    
@@ -137,7 +137,7 @@ public class ParentChildIndexer
             // ADD YOUR CODES HERE
             RocksIterator iter = dbinverted.newIterator();                
             for(iter.seekToFirst(); iter.isValid(); iter.next()) {
-                System.out.println(new String(iter.key()) + " = \n" + new String(iter.value()));
+                System.out.println(new String(iter.key()) + " -> " + new String(iter.value()));
             }
     }
 

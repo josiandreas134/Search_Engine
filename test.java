@@ -12,6 +12,7 @@ import org.rocksdb.Options;
 import se.ForwardIndexer;
 import se.InvertedIndexer;
 import se.ParentChildIndexer;
+import se.PageRankIndexer;
 
 public class test {
     public static void main(String[] args) {
@@ -23,18 +24,16 @@ public class test {
             RocksDB invertedDocument = RocksDB.open(options, "db/invertedDocument");
             RocksDB ParentChildIndex = RocksDB.open(options, "db/ParentChildIndex");
             RocksDB ParentChildIndexInverted = RocksDB.open(options, "db/ParentChildIndexInverted");
+            RocksDB PageRankIndex = RocksDB.open(options,"db/PageRankIndex");
             
             // Crawl
-            Crawler crawler = new Crawler("https://www.cse.ust.hk/");
-            Vector<Crawler> crawlers = crawler.crawlers(30);
-
-            DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
-            documentIndexer.index_pages();
-
-            ParentChildIndexer parentChildIndexer = new ParentChildIndexer(crawlers, document, invertedDocument, ParentChildIndex, ParentChildIndexInverted );
-            parentChildIndexer.index_pages();
-            parentChildIndexer.PrintChildParent();
-
+            
+            PageRankIndexer pagerank = new PageRankIndexer(PageRankIndex,invertedDocument,ParentChildIndex,ParentChildIndexInverted);
+            pagerank.Initialize();
+            pagerank.index_ranks();
+            pagerank.print_pageRankIndex();
+            
+            
             // Output for PHASE I
             
             // invertedIndexer.print_titleInvIndex();
