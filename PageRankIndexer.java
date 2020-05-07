@@ -44,6 +44,12 @@ public class PageRankIndexer {
     public void index_ranks() throws RocksDBException
     {
         Boolean Converge = false;
+        int total = 0;
+        int convergenum = 0;
+        RocksIterator iter2 = ParentChildIndexInverted.newIterator();
+        for(iter2.seekToFirst(); iter2.isValid(); iter2.next()){
+            ++total;
+        }
         do{
             RocksIterator iter = ParentChildIndexInverted.newIterator();
             for(iter.seekToFirst(); iter.isValid(); iter.next()){
@@ -52,11 +58,14 @@ public class PageRankIndexer {
                 for(int i=0;i<ParentList.length ;i++){
                     rank += computePageRank(ParentList[i]);
             }
-            rank = (0.85) + (0.15*rank);
+            rank = (0.15) + (0.85*rank);
             String rankS = new String(PageRankIndex.get(iter.key()));
             Double rankD = Double.valueOf(rankS);
             if(rank.equals(rankD)){
-                Converge = true;
+                ++convergenum;
+                if(convergenum == total){
+                    Converge = true;
+                }
             }
             PageRankIndex.put(iter.key(), (Double.toString(rank)).getBytes()); 
             }
