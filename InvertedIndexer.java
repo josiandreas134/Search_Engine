@@ -88,10 +88,19 @@ public class InvertedIndexer
 
             byte[] value = titleInverted.get(wordID);
             if(value == null) {
-                value = ("doc" + new String(pageID) + " " + i+1).getBytes();
+                value = ("doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
             }
             else {
-                value = (new String(value) + " doc" + new String(pageID) + " " + i+1).getBytes();
+                String temp_val = new String(value);
+                String temp_pageID = "doc" + new String(pageID);
+                int loc = temp_val.indexOf(temp_pageID);
+                if(loc == -1) {
+                    value = (temp_val + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                }
+                else {
+                    int split_loc = loc+temp_pageID.length()-1;
+                    value = (temp_val.substring(0, split_loc) + " " + (int)(i+1) + temp_val.substring(split_loc)).getBytes();
+                }
             }
             titleInverted.put(wordID, value);
         }
@@ -109,10 +118,19 @@ public class InvertedIndexer
             
             byte[] value = contentInverted.get(wordID);
             if(value == null) {
-                value = ("doc" + new String(pageID) + " " + i+1).getBytes();
+                value = ("doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
             }
             else {
-                value = (new String(value) + " doc" + new String(pageID) + " " + i+1).getBytes();
+                String temp_val = new String(value);
+                String temp_pageID = "doc" + new String(pageID);
+                int loc = temp_val.indexOf(temp_pageID);
+                if(loc == -1) {
+                    value = (new String(value) + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                }
+                else {
+                    int split_loc = loc+temp_pageID.length();
+                    value = (temp_val.substring(0, split_loc) + " " + (int)(i+1) + temp_val.substring(split_loc)).getBytes();
+                }
             }
             contentInverted.put(wordID, value);
         }

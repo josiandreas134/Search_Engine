@@ -95,11 +95,14 @@ public class ForwardIndexer
             }
         }
 
+        int word_count = 0;
+
         for (Map.Entry<String, Integer> e : map.entrySet()) {
             data += e.getKey();
             data += " ";
             data += e.getValue();
             data += " ";
+            word_count += e.getValue() * e.getValue();
         }
 
         data += " ;;; ";
@@ -107,6 +110,7 @@ public class ForwardIndexer
             data += links.get(i) + " ";
         }
 
+        data += " ;;; " + word_count;
         db.put(pageID, data.getBytes());
     }
     
