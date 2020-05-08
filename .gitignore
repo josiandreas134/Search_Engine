@@ -1,3 +1,4 @@
 db/
+db_old/
 lib/librocksdbjni-linux64.so
 lib/rocksdbjni-6.9.0-linux64.jar

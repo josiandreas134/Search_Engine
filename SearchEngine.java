@@ -29,33 +29,44 @@ public class SearchEngine {
             RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
             
             // Crawl
+            System.out.println("Start crawling");
             Crawler crawler = new Crawler("https://www.cse.ust.hk/");
             Vector<Crawler> crawlers = crawler.crawlers(30, forwardIndex);
+            System.out.println("Finished crawling");
 
             DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
             documentIndexer.index_pages();
-
+            System.out.println("Finished making document index");
+            
             WordIndexer wordIndexer = new WordIndexer(crawlers, word, invertedWord);
             wordIndexer.index_words();
-
+            System.out.println("Finished making word index");
+            
             ForwardIndexer forwardIndexer = new ForwardIndexer(crawlers, word, invertedWord, document, invertedDocument, forwardIndex);
             forwardIndexer.index_pages();
-
+            System.out.println("Finished making forward index");
+            
             InvertedIndexer invertedIndexer = new InvertedIndexer(crawlers, word, invertedWord, document, invertedDocument, titleInverted, contentInverted);
             invertedIndexer.index_pages();
+            System.out.println("Finished making inverted index");
 
             // Output for PHASE I
             try {
                 FileWriter myWriter = new FileWriter("spider_result.txt");
                 RocksIterator iter = forwardIndex.newIterator();
                     
+                int num = 0;
+                System.out.println("Saving to txt");
                 for(iter.seekToFirst(); iter.isValid(); iter.next()) {
+                    num++;
+                    System.out.println(num);
+                    myWriter.write("Page "+num+"\n");
                     String[] page = ((new String(iter.value())).split(" ;;; "));
                     if(page.length != 5) {
-                        System.out.println("Array length" + page.length);
-                        for(int x=0; x<page.length; x++) {
-                            System.out.println(page[x]);
-                        }
+                        // System.out.println("Array length" + page.length);
+                        // for(int x=0; x<page.length; x++) {
+                        //     System.out.println(page[x]);
+                        // }
                     }
                     if(page[0] != null) {
                         myWriter.write(page[0] + "\n");                                        // Title

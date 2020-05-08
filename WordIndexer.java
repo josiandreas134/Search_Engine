@@ -40,7 +40,7 @@ public class WordIndexer {
 
     public void addEntry(String new_word) throws RocksDBException
     {
-        // Get the latest pageID
+        // Get the latest wordID
         Integer lastID = 0;
         RocksIterator iter = word.newIterator();
         for(iter.seekToFirst(); iter.isValid(); iter.next()){
@@ -59,7 +59,7 @@ public class WordIndexer {
 
     public void addEntry(Crawler c) throws RocksDBException
     {
-        // Get the latest pageID
+        // Get the latest wordID
         Integer lastID = 0;
         RocksIterator iter = word.newIterator();
         for(iter.seekToFirst(); iter.isValid(); iter.next()){
