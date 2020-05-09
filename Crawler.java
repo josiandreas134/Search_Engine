@@ -27,6 +27,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import org.rocksdb.RocksDB;
+import org.rocksdb.RocksDBException;
+import org.rocksdb.RocksIterator;
+import org.rocksdb.Options;
 
 public class Crawler
 {
@@ -50,7 +54,11 @@ public class Crawler
 
         bean.setURL(url);
         bean.setFilters(filter);
-        result.add(bean.getText());
+        
+	if (bean.getText() != null && bean.getText() != "")
+		result.add(bean.getText());
+	else
+		result.add("No Title");
 
         return result; 
     }
@@ -191,52 +199,28 @@ public class Crawler
         return result;
     }
 
-    public Vector<Crawler> crawlers(int num) {
+    public Vector<Crawler> crawlers(int num, RocksDB document) throws RocksDBException {
+	
+	num -= 1;
 
-        Vector result = this.parser();
-
-        // output title
-        Vector<String> title = (Vector<String>) result.get(0);
-        // System.out.println("Title of " + this.url + ":");
-        // System.out.println(title.get(0));
-        // System.out.println("");
-
-        // output last modification date
-        Vector<String> lastModDate = (Vector<String>) result.get(1);
-        // System.out.println("Last modification date of " + this.url + ":");
-        // System.out.println(lastModDate.get(0));
-        // System.out.println("");
-
-        // output size
-        Vector<String> size = (Vector<String>) result.get(2);
-        // System.out.println("The size of " + this.url + ":");
-        // System.out.println(size.get(0));
-        // System.out.println("");
-
-        // output content
-        Vector<String> words = (Vector<String>) result.get(3);
-        // System.out.println("Words in " + this.url + ":");
-        // for (int i = 0; i < words.size(); i++) {
-        //     System.out.print(words.get(i) + " ");
-        // }
-        // System.out.println("\n\n");
-
-        // output links
-        Vector<String> links = (Vector<String>) result.get(4);
-        // System.out.println("Links in " + this.url + ":");
-        // for (int i = 0; i < links.size(); i++) {
-        //     System.out.println(links.get(i));
-        // }
-        // System.out.println("-------------------------------");
-
-        // loop in the child links
+        // loop in the child links 
         Vector<Crawler> crawlers = new Vector<Crawler>();
         crawlers.add(this);
-        for (int i = 0, k = 0; i < num-1; i++, k++) {
-                Vector<String> links_k = (Vector<String>) crawlers.get(k).parser().get(4);
-                for (int j = 0; j < links_k.size() && i < num-1; j++, i++) {
-                        crawlers.add(new Crawler(links_k.get(j)));
+        for (int i = 0, k = 0; i < num; i++, k++) {
+            Vector<String> links_k = (Vector<String>) crawlers.get(k).parser().get(4);
+            for (int j = 0; j < links_k.size() && i < num; j++, i++) {
+                if (document.get(links_k.get(j).getBytes()) != null) {
+                    String data = new String(document.get(links_k.get(j).getBytes()));
+                    Crawler temp = new Crawler(links_k.get(j));
+                    Vector<String> date = (Vector<String>) temp.parser().get(1);
+		    if (data.substring(data.indexOf(";;;", 0), 10) != date.get(0))
+                        crawlers.add(temp);
+                    else 
+                        i--;
                 }
+                else 
+                    crawlers.add(new Crawler(links_k.get(j)));
+            }
         }
 
         return crawlers;
@@ -249,7 +233,7 @@ public class Crawler
             Vector result = crawlers.get(i).parser();
             Vector<String> links = (Vector<String>) result.get(4);
 
-            for (int j = 0; j<links.size() && i<limit-1; j++, i++) {
+            for (int j = 0; j<links.size() || i<limit-1; j++, i++) {
                 crawlers.add(new Crawler(links.get(i)));
             }
         }

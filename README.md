@@ -8,20 +8,27 @@ Make sure to download the Rocks DB library below and put them under `lib/`
 - [rocksdbjni-6.9.0-linux64.jar](https://hkustconnect-my.sharepoint.com/:u:/g/personal/raa_connect_ust_hk/EcRwjawFnE5BsU2P0FTtGtIB9OB_mRzh73n697i-Ztx6dA?e=QcxtUZ)
 - [librocksdbjni-linux64.so](https://hkustconnect-my.sharepoint.com/:u:/g/personal/raa_connect_ust_hk/EVX7acboBvVOvWItvlHVQtQBkgPLWs4qVCIAaV_5Nzx94A?e=I70Q3K)
 
-*P.S. : Might need different version if  used in the UST VM.*
+*P.S. : Might need different version if  used in the UST VM/different OS*
 
-## Compiling
+## Follow this step to compile and execute the code:
 
-Use following command to compile **SearchEngine.java**
-
+**_Compiling_**
+1. use following command to compile all the java files in the directory
 ```bash
-javac -cp lib/rocksdbjni-6.9.0-linux64.jar:./ -d ./ SearchEngine.java
+javac -cp lib/htmlparser.jar:lib/rocksdbjni-6.9.0-linux64.jar:./ -d ./ *.java
 ```
 
-## Executing
+**_Executing_**
 
-Use the following command to execute **SearchEngine.class**
+2. Before executing the code, create a folder named _db_ to store rocksdb data.
+```bash
+mkdir db
+```
 
+3. Use the following command to execute **SearchEngine.class**
 ```bash
 java -cp lib/rocksdbjni-6.9.0-linux64.jar:lib/htmlparser.jar:. se.SearchEngine
 ```
+**_Output File_**
+
+4. The output of the code will be placed in a _.txt_ file called **spider_result.txt**
