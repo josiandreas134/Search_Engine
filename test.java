@@ -27,18 +27,7 @@ public class test {
             RocksDB PageRankIndex = RocksDB.open(options,"db/PageRankIndex");
             
             // Crawl
-            Crawler crawler = new Crawler("https://www.cse.ust.hk/");
-            Vector<Crawler> crawlers = crawler.crawlers(30);
-
-            DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
-            documentIndexer.index_pages();
-
-            ParentChildIndexer parentChildIndexer = new ParentChildIndexer(crawlers, document, invertedDocument, ParentChildIndex, ParentChildIndexInverted );
-            parentChildIndexer.index_pages();
-            
             PageRankIndexer pagerank = new PageRankIndexer(PageRankIndex,invertedDocument, ParentChildIndex, ParentChildIndexInverted);
-            pagerank.Initialize();
-            pagerank.index_ranks();
             pagerank.print_pageRankIndex();
             
             // Output for PHASE I
