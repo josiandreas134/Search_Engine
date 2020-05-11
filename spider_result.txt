@@ -2,8 +2,9 @@ Page 1
 Department of Computer Science and Engineering - HKUST
 https://www.cse.ust.hk/
 2020-05-08, 231
-raymond 2, wong 2, receiv 2, honorari 2, mention 2, common 2, core 2, three 2, forg 2, oversea 2, lifehkust 1, librari 1, direc 1, jobshkust 1, faculti 7, profil 1, about 5, net 1, school 2, quick 2, autonom 2, vehicl 2, depart 3, develop 2, comput 6, professor 2, scienc 6, serv 2, engin 8, commun 2, hkust 10, teach 1, more 3, excel 1, univers 3, award 1, new 7, covid19 1, academ 4, link 2, undergradu 6, postgradu 8, staff 4, alumni 10, seeker 2, employ 2, industri 4, partner 2, welcom 2, outbreak 1, mainland 1, toward 3, understand 6, engag 2, humanrobot 2, interac 2, spatialtempor 2, crowdsourc 2, learn 10, mission 2, vision 3, fast 2, fact 2, event 4, open 2, contact 4, peopl 4, research 17, area 2, synthes 2, imag 2, spatiotempor 3, machin 6, model 2, precipit 2, nowcast 2, panoram 3, view 3, public 3, lab 2, center 2, project 2, facil 2, enrich 2, qualiti 2, assur 2, admis 2, earli 2, recruit 2, hkustcs 2, user 3, prefer 3, approxim 2, queri 2, process 2, secur 2, smart 4, devic 2, robolawy 3, graduat 2, placem 2, spotlight 1, step 2, whole 2, realm 2, augment 3, realiti 2, point 2, practic 2, contract 3, gener 3, chatbot 2, mood 2, modul 2, music 2, code 3, analysi 3, test 3, and 1, transform 2, live 2, creat 2, predict 5, futur 2, data 7, china 3, wechat 2, tackl 2, fake 2, coda 3, facilit 3, applic 2, network 2, optim 2, pinpoint 3, softwar 3, vulner 2, real 2, world 2, differ 2, facebook 4, visual 2, locat 4, find 5, destin 2, becom 2, simpler 2, remedi 2, medicin 2, sens 2, citi 2, analyt 2, elearn 2, platform 2, video 1, last 1, updat 1, 20200508 1, privaci 2, previou 1, next 1, februari 2, 2017 2, novemb 3, 2015 2, map 1, ahead 1, 2018 1, forum 10, sitemap 2, copyright 2, hong 2, kong 2, right 2, reserv 2, follow 2, instagram 2, youtub 2, linkedin 2, workshop 6, technologi 4, 2020 14, wed 1, career 4, fair 2, mon 1, postpon 2, thu 1, student 3, activ 2, local 2, program 4, contest 2, 2019 5, sat 1, april 4, septemb 1, kenneth 2, leung 2
+raymond 2, wong 2, receiv 2, honorari 2, mention 2, common 2, core 2, three 2, forg 2, oversea 2, lifehkust 1, librari 1, direc 1, jobshkust 1, faculti 7, profil 1, about 5, net 1, school 2, quick 2, autonom 2, vehicl 2, depart 3, develop 2, comput 6, professor 2, scienc 6, serv 2, engin 8, commun 2, hkust 10, teach 1, more 3, excel 1, univers 3, award 1, new 7, covid19 1, academ 4, link 2, undergradu 6, postgradu 8, staff 4, alumni 10, seeker 2, employ 2, industri 4, partner 2, welcom 2, outbreak 1, mainland 1, secur 2, smart 4, devic 2, robolawy 3, contract 3, gener 3, chatbot 2, understand 6, mission 2, vision 3, fast 2, fact 2, event 4, open 2, contact 4, peopl 4, research 17, area 2, user 3, prefer 3, spatialtempor 2, crowdsourc 2, pinpoint 3, softwar 3, vulner 2, real 2, world 2, panoram 3, lab 2, center 2, project 2, facil 2, enrich 2, qualiti 2, assur 2, admis 2, earli 2, recruit 2, view 3, public 3, hkustcs 2, coda 3, facilit 3, applic 2, network 2, optim 2, machin 6, learn 10, graduat 2, placem 2, spotlight 1, creat 2, predict 5, futur 2, data 7, remedi 2, medicin 2, china 3, analyt 2, elearn 2, platform 2, sens 2, citi 2, code 3, analysi 3, test 3, and 1, synthes 2, wechat 2, tackl 2, fake 2, differ 2, facebook 4, step 2, whole 2, realm 2, augment 3, realiti 2, imag 2, spatiotempor 3, model 2, precipit 2, nowcast 2, approxim 2, queri 2, process 2, mood 2, modul 2, point 2, practic 2, transform 2, live 2, visual 2, locat 4, find 5, destin 2, becom 2, simpler 2, music 2, toward 3, engag 2, humanrobot 2, interac 2, video 1, last 1, updat 1, 20200508 1, privaci 2, previou 1, next 1, novemb 3, 2015 2, 2018 1, 2017 2, februari 2, map 1, ahead 1, forum 10, sitemap 2, copyright 2, hong 2, kong 2, right 2, reserv 2, follow 2, instagram 2, youtub 2, linkedin 2, workshop 6, technologi 4, 2020 14, wed 1, career 4, fair 2, mon 1, postpon 2, thu 1, student 3, activ 2, local 2, program 4, contest 2, 2019 5, sat 1, april 4, septemb 1, kenneth 2, leung 2
 https://www.cse.ust.hk/Restricted/
+https://www.linkedin.com/company/department-of-computer-science-and-engineering-the-hong-kong-university-of-science-and-technology
 https://hkustcareers.ust.hk/
 http://epublish.ust.hk/cgi-bin/eng/story.php?id=96&amp;catid=97&amp;keycode=88b7aae0ae45ddb0e6e000ee2682721a&amp;token=17b43a00aeb0f8f8f08df16ae664909f
 https://www.ust.hk/map-directions
@@ -36,16 +37,16 @@ https://uce.ust.hk/web/teaching/award_2019.html
 https://www.cse.ust.hk/
 https://www.cse.ust.hk/#
 https://www.cse.ust.hk/#spotlight-slides
-https://www.ust.hk/news
 https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
+https://www.ust.hk/news
 https://library.ust.hk/
 https://www.ust.hk/about-hkust
 https://www.cse.ust.hk/admin/people/faculty/
 https://seng.ust.hk/news/20200402/autonomous-vehicles-developed-hkust-engineering-professor-serve-community-during
 https://www.cse.ust.hk/pg/research/projects/mxj/hri/
 https://www.cse.ust.hk/pg/research/projects/gchan/lst/
-https://www.cse.ust.hk/pg/research/projects/dyyeung/ml-ed/
 https://www.cse.ust.hk/pg/research/projects/qianzh/sds/
+https://www.cse.ust.hk/pg/research/projects/dyyeung/ml-ed/
 https://www.cse.ust.hk/ug/enrichment/
 https://www.cse.ust.hk/pg/research/areas/
 https://www.cse.ust.hk/admin/qa/
@@ -55,7 +56,6 @@ https://www.cse.ust.hk/pg/research/projects/
 https://www.cse.ust.hk/pg/ourgraduates/
 https://www.cse.ust.hk/event/BDICareerFair2020/
 https://www.cse.ust.hk/ug/admissions/
-https://www.linkedin.com/company/department-of-computer-science-and-engineering-the-hong-kong-university-of-science-and-technology
 https://www.cse.ust.hk/admin/facilities/
 https://www.ust.hk/academics/list
 https://www.cse.ust.hk/pg/research/projects/yike/aqp/
@@ -83,10 +83,11 @@ Page 2
 Faculty Intranet | HKUST CSE
 https://www.cse.ust.hk/Restricted/
 2018-08-31, 242
-sitemap 2, copyright 2, hong 2, kong 2, right 2, reserv 2, follow 2, mark 1, instagram 2, asterisk 1, youtub 2, outsid 1, linkedin 2, itsc 1, connec 1, requir 1, 20180831 1, technologi 2, lifehkust 1, librari 1, student 1, direc 1, jobshkust 1, faculti 6, profil 1, about 5, net 4, school 2, quick 1, depart 1, comput 2, scienc 2, engin 2, hkust 6, more 1, univers 3, new 3, academ 3, link 1, undergradu 5, postgradu 7, staff 5, alumni 3, seeker 1, employ 1, industri 1, partner 1, welcom 2, mission 2, vision 2, fast 2, fact 2, event 2, open 2, contact 4, peopl 2, research 8, area 4, lab 2, center 2, project 3, facil 2, enrich 2, qualiti 2, assur 2, admis 2, earli 2, recruit 2, user 1, graduat 2, placem 2, access 3, admin 2, restrict 1, facultypersonnel 1, onli 1, onlin 1, system 6, leav 1, note 2, your 1, applic 2, network 1, sent 1, cseformusthk 1, inform 1, resourc 1, plan 1, manag 2, meet 1, room 1, book 1, final 1, facebook 2, last 1, year 1, updat 1, bookshelf 1, webmail 1, privaci 2, for 1, exchang 1, mail 1, outlook 1, idriv 1, logo 3, servic 1
+sitemap 2, copyright 2, hong 2, kong 2, right 2, reserv 2, follow 2, mark 1, instagram 2, asterisk 1, youtub 2, outsid 1, linkedin 2, itsc 1, connec 1, requir 1, 20180831 1, technologi 2, lifehkust 1, librari 1, student 1, direc 1, jobshkust 1, faculti 6, profil 1, about 5, net 4, school 2, quick 1, depart 1, comput 2, scienc 2, engin 2, hkust 6, more 1, univers 3, new 3, academ 3, link 1, undergradu 5, postgradu 7, staff 5, alumni 3, seeker 1, employ 1, industri 1, partner 1, welcom 2, mission 2, vision 2, fast 2, fact 2, event 2, open 2, contact 4, peopl 2, research 8, area 4, user 1, lab 2, center 2, project 3, facil 2, enrich 2, qualiti 2, assur 2, admis 2, earli 2, recruit 2, applic 2, network 1, graduat 2, placem 2, access 3, admin 2, restrict 1, facultypersonnel 1, onli 1, onlin 1, system 6, leav 1, note 2, your 1, facebook 2, sent 1, cseformusthk 1, inform 1, resourc 1, plan 1, manag 2, meet 1, room 1, book 1, final 1, last 1, year 1, updat 1, bookshelf 1, webmail 1, privaci 2, for 1, exchang 1, mail 1, outlook 1, idriv 1, logo 3, servic 1
 https://www.cse.ust.hk/Restricted/Fac_Only/
 https://www.cse.ust.hk/Restricted/#
 https://www.cse.ust.hk/Restricted/
+https://www.linkedin.com/company/department-of-computer-science-and-engineering-the-hong-kong-university-of-science-and-technology
 https://hkustcareers.ust.hk/
 https://itsc.ust.hk/apps/vpn/
 https://www.ust.hk/map-directions
@@ -108,13 +109,13 @@ https://www.cse.ust.hk/admin/people/pg/
 https://idrive.cse.ust.hk/
 https://www.cse.ust.hk/admin/sitemap/
 https://www.cse.ust.hk/pg/
-https://www.facebook.com/hkust/
 https://exchange.cse.ust.hk/
+https://www.facebook.com/hkust/
 https://www.cse.ust.hk/admin/industry_collaboration/
 https://www.cse.ust.hk/admin/welcome/
 https://www.cse.ust.hk/
-https://www.ust.hk/news
 https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
+https://www.ust.hk/news
 https://library.ust.hk/
 https://www.ust.hk/about-hkust
 https://www.cse.ust.hk/admin/people/faculty/
@@ -128,7 +129,6 @@ https://www.cse.ust.hk/pg/research/projects/
 https://www.cse.ust.hk/pg/ourgraduates/
 https://login.psft.ust.hk/cas/login?method=POST&amp;service=https%3A%2F%2Fsisprod.psft.ust.hk%2Fpsp%2FSISPROD%2FEMPLOYEE%2FHRMS%2Fh%2F%3Ftab%3DDEFAULT%26cmd%3Dlogin%26languageCd%3DENG%26userid%3Dcasproxy%26pwd%3Dna
 https://www.cse.ust.hk/ug/admissions/
-https://www.linkedin.com/company/department-of-computer-science-and-engineering-the-hong-kong-university-of-science-and-technology
 https://www.cse.ust.hk/admin/facilities/
 https://www.ust.hk/academics/list
 https://www.cse.ust.hk/admin/people/alumni/
