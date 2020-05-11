@@ -30,6 +30,10 @@ public class CosSim {
     public HashMap<String, Double> getPages(double thresh) throws RocksDBException
     {
         // Get all wordIDs in Query
+        HashMap<String, Double> cossim = new HashMap<String, Double>();
+        HashMap<String, Integer> cossim_u = new HashMap<String, Integer>();
+        HashMap<String, Integer> cossim_d = new HashMap<String, Integer>();
+
         Vector<String> q = new Vector<String>(Arrays.asList(query.split("\\s+")));
         q = StopWords.clean(q);
         boolean no_match = true;
@@ -47,9 +51,6 @@ public class CosSim {
             return null;
         }
 
-        HashMap<String, Double> cossim = new HashMap<String, Double>();
-        HashMap<String, Integer> cossim_u = new HashMap<String, Integer>();
-        HashMap<String, Integer> cossim_d = new HashMap<String, Integer>();
         
         for(int i=0; i<q.size(); i++) {
             // HashMap<String, Integer> freq = new HashMap<String, Integer>();
@@ -120,6 +121,7 @@ public class CosSim {
             System.out.println(new String(contentInverted.get("1".getBytes())));
             System.out.println(new String(contentInverted.get("2".getBytes())));
             System.out.println(new String(contentInverted.get("3".getBytes())));
+            System.out.println(new String(forwardIndex.get("1".getBytes())));
             // System.out.println(new String(word.get("HKUST".getBytes())));
             // System.out.println(new String(word.get("SCHOOL".getBytes())));
 

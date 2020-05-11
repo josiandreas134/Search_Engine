@@ -8,6 +8,7 @@ https://www.linkedin.com/company/department-of-computer-science-and-engineering-
 https://hkustcareers.ust.hk/
 http://epublish.ust.hk/cgi-bin/eng/story.php?id=96&amp;catid=97&amp;keycode=88b7aae0ae45ddb0e6e000ee2682721a&amp;token=17b43a00aeb0f8f8f08df16ae664909f
 https://www.ust.hk/map-directions
+https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
 https://www.cse.ust.hk/admin/about/
 https://www.ust.hk/lifehkust
 https://www.cse.ust.hk/pg/admissions/recruiting/
@@ -37,7 +38,6 @@ https://uce.ust.hk/web/teaching/award_2019.html
 https://www.cse.ust.hk/
 https://www.cse.ust.hk/#
 https://www.cse.ust.hk/#spotlight-slides
-https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
 https://www.ust.hk/news
 https://library.ust.hk/
 https://www.ust.hk/about-hkust
@@ -45,8 +45,8 @@ https://www.cse.ust.hk/admin/people/faculty/
 https://seng.ust.hk/news/20200402/autonomous-vehicles-developed-hkust-engineering-professor-serve-community-during
 https://www.cse.ust.hk/pg/research/projects/mxj/hri/
 https://www.cse.ust.hk/pg/research/projects/gchan/lst/
-https://www.cse.ust.hk/pg/research/projects/qianzh/sds/
 https://www.cse.ust.hk/pg/research/projects/dyyeung/ml-ed/
+https://www.cse.ust.hk/pg/research/projects/qianzh/sds/
 https://www.cse.ust.hk/ug/enrichment/
 https://www.cse.ust.hk/pg/research/areas/
 https://www.cse.ust.hk/admin/qa/
@@ -91,6 +91,7 @@ https://www.linkedin.com/company/department-of-computer-science-and-engineering-
 https://hkustcareers.ust.hk/
 https://itsc.ust.hk/apps/vpn/
 https://www.ust.hk/map-directions
+https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
 https://www.cse.ust.hk/admin/about/
 https://www.ust.hk/lifehkust
 https://www.cse.ust.hk/pg/admissions/recruiting/
@@ -114,7 +115,6 @@ https://www.facebook.com/hkust/
 https://www.cse.ust.hk/admin/industry_collaboration/
 https://www.cse.ust.hk/admin/welcome/
 https://www.cse.ust.hk/
-https://www.youtube.com/channel/UC1Gky4HCpEOK5EmoUj6zhGg
 https://www.ust.hk/news
 https://library.ust.hk/
 https://www.ust.hk/about-hkust

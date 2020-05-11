@@ -71,7 +71,10 @@ public class ForwardIndexer
 
         String data = ((Vector<String>)parsed.get(0)).get(0) + " ;;; " + ((Vector<String>)parsed.get(1)).get(0) + " ;;; " + ((Vector<String>)parsed.get(2)).get(0) + " ;;; ";
 
-        
+        String raw_content = "";
+        for(int i=0; i<content.size() && i<50; i++) {
+            raw_content += content.get(i)+" ";
+        }
         content = StopWords.clean(content);
         // HashMap
         HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -111,6 +114,8 @@ public class ForwardIndexer
         }
 
         data += " ;;; " + word_count;
+
+        data += " ;;; " + raw_content;
         db.put(pageID, data.getBytes());
     }
     
