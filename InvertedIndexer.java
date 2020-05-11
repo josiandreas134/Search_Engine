@@ -77,6 +77,8 @@ public class InvertedIndexer
         Vector<String> title = new Vector<String>(Arrays.asList(titleWords));
         title = StopWords.clean(title);
 
+        boolean rewrite = false;
+        Vector<String> refreshed = new Vector<String>();
         for(int i=0; i<title.size(); i++) {
             byte[] wordID = word.get((title.get(i)).getBytes());
             // If wordID is not available
@@ -94,11 +96,33 @@ public class InvertedIndexer
                 String temp_val = new String(value);
                 String temp_pageID = "doc" + new String(pageID);
                 int loc = temp_val.indexOf(temp_pageID);
+                // System.out.println(wordID+"   "+refreshed);
+                
+                // if the page already exist, remove
+                if(((i == 0 && loc != -1) || rewrite) && !refreshed.contains(new String(wordID))) {
+                    int end_loc = loc+1;
+                    while(end_loc < temp_val.length() && temp_val.charAt(end_loc) != 'd') {
+                        end_loc++;
+                    }
+                    temp_val = temp_val.substring(0, loc) + temp_val.substring(end_loc);
+                    loc = temp_val.indexOf(temp_pageID);
+                    refreshed.add(new String(wordID));
+                    // System.out.println("new" + refreshed);
+                    rewrite = true;
+                }
+
                 if(loc == -1) {
-                    value = (temp_val + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    // System.out.println("--"+temp_val+"--");
+                    // System.out.println("masuk");
+                    if(temp_val.equals("") || temp_val.equals(" ")) {
+                        value = ("doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    }
+                    else{
+                        value = (temp_val + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    }
                 }
                 else {
-                    int split_loc = loc+temp_pageID.length()-1;
+                    int split_loc = loc+temp_pageID.length();
                     value = (temp_val.substring(0, split_loc) + " " + (int)(i+1) + temp_val.substring(split_loc)).getBytes();
                 }
             }
@@ -107,6 +131,9 @@ public class InvertedIndexer
 
         // For content
         Vector<String> content = StopWords.clean((Vector<String>) p.get(3));
+        refreshed = new Vector<String>();
+
+        rewrite = false;
         for(int i=0; i<content.size(); i++) {
             byte[] wordID = word.get((content.get(i)).getBytes());
             // If wordID is not available
@@ -121,11 +148,32 @@ public class InvertedIndexer
                 value = ("doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
             }
             else {
+                
                 String temp_val = new String(value);
                 String temp_pageID = "doc" + new String(pageID);
                 int loc = temp_val.indexOf(temp_pageID);
+                // System.out.println(new String(wordID)+"   "+refreshed+refreshed.contains(wordID));
+                
+                // if the page already exist, remove
+                if(((i == 0 && loc != -1) || rewrite) && !refreshed.contains(new String(wordID))) {
+                    int end_loc = loc+1;
+                    while(end_loc < temp_val.length() && temp_val.charAt(end_loc) != 'd') {
+                        end_loc++;
+                    }
+                    temp_val = temp_val.substring(0, loc) + temp_val.substring(end_loc);
+                    loc = temp_val.indexOf(temp_pageID);
+                    refreshed.add(new String(wordID));
+                    // System.out.println("new" + refreshed);
+                    rewrite = true;
+                }
+
                 if(loc == -1) {
-                    value = (new String(value) + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    if(temp_val.equals("") || temp_val.equals(" ")) {
+                        value = ("doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    }
+                    else{
+                        value = (temp_val + " doc" + new String(pageID) + " " + (int)(i+1)).getBytes();
+                    }
                 }
                 else {
                     int split_loc = loc+temp_pageID.length();

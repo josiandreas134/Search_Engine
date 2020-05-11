@@ -88,7 +88,6 @@ public class CosSim {
             // }
 
             // System.out.println("freq "+q.get(i));
-            // System.out.println(freq);
         }
         for (String key : cossim_u.keySet()) {
             String fwd_str = new String(forwardIndex.get(key.getBytes()));
@@ -116,7 +115,14 @@ public class CosSim {
     //         RocksDB titleInverted = RocksDB.open(options, "db/titleInverted");
     //         RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
 
-    //         CosSim c= new CosSim("HKUST CSE", word, titleInverted, contentInverted, forwardIndex);
+    //         System.out.println(new String(titleInverted.get("1".getBytes())));
+    //         System.out.println(new String(titleInverted.get("2".getBytes())));
+    //         System.out.println(new String(titleInverted.get("3".getBytes())));
+    //         System.out.println(new String(contentInverted.get("1".getBytes())));
+    //         System.out.println(new String(contentInverted.get("2".getBytes())));
+    //         System.out.println(new String(contentInverted.get("3".getBytes())));
+
+    //         CosSim c= new CosSim("HKUST COMPUTER", word, titleInverted, contentInverted, forwardIndex);
     //         System.out.println(c.getPages(0.2));
     //     }
     //     catch(RocksDBException e)

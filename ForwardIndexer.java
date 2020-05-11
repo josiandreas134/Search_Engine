@@ -114,16 +114,8 @@ public class ForwardIndexer
         db.put(pageID, data.getBytes());
     }
     
-    public void delEntry(String word) throws RocksDBException
-    {
-        // Delete the word and its list from the hashtable
-        // ADD YOUR CODES HERE
-        db.remove(word.getBytes());
-    } 
     public void printAll() throws RocksDBException
     {
-        // Print all the data in the hashtable
-        // ADD YOUR CODES HERE
         RocksIterator iter = db.newIterator();
                     
         for(iter.seekToFirst(); iter.isValid(); iter.next()) {
@@ -136,12 +128,5 @@ public class ForwardIndexer
         for(int i=0; i<crawlers.size(); i++) {
             addEntry(crawlers.get(i));
         }
-    }
-
-    public void close_db() throws RocksDBException
-    {
-        this.db.close();
-        this.document.close();
-        this.word.close();
     }
 }
