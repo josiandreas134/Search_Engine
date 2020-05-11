@@ -13,6 +13,8 @@ import se.ForwardIndexer;
 import se.InvertedIndexer;
 import se.StopWords;
 import se.WordIndexer;
+import se.ParentChildIndexer;
+import se.PageRankIndexer;
 
 public class SearchEngine {
     public static void main(String[] args) {
@@ -27,6 +29,10 @@ public class SearchEngine {
             RocksDB forwardIndex = RocksDB.open(options, "db/forwardIndex");
             RocksDB titleInverted = RocksDB.open(options, "db/titleInverted");
             RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
+            RocksDB ParentChildIndex = RocksDB.open(options, "db/ParentChildIndex");
+            RocksDB ParentChildIndexInverted = RocksDB.open(options, "db/ParentChildIndexInverted");
+            RocksDB PageRankIndex = RocksDB.open(options,"db/PageRankIndex");
+
             
             // Crawl
             System.out.println("Start crawling");
@@ -49,6 +55,15 @@ public class SearchEngine {
             InvertedIndexer invertedIndexer = new InvertedIndexer(crawlers, word, invertedWord, document, invertedDocument, titleInverted, contentInverted);
             invertedIndexer.index_pages();
             System.out.println("Finished making inverted index");
+
+            ParentChildIndexer parentChildIndexer = new ParentChildIndexer(crawlers, document, invertedDocument, ParentChildIndex, ParentChildIndexInverted );
+            parentChildIndexer.index_pages();
+            System.out.println("Finished making parent->child && child->parent index");
+
+            PageRankIndexer pagerank = new PageRankIndexer(PageRankIndex,invertedDocument, ParentChildIndex, ParentChildIndexInverted);
+            pagerank.Initialize();
+            pagerank.index_ranks();
+            System.out.println("Finished making Page Rank index");
 
             // Output for PHASE I
             try {
