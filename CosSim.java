@@ -27,7 +27,7 @@ public class CosSim {
         this.forwardIndex = forwardIndex;
     }
 
-    private HashMap<String, Double> getPages(double thresh) throws RocksDBException
+    public HashMap<String, Double> getPages(double thresh) throws RocksDBException
     {
         // Get all wordIDs in Query
         Vector<String> q = new Vector<String>(Arrays.asList(query.split("\\s+")));
