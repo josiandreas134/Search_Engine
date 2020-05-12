@@ -234,7 +234,9 @@ public class Crawler
             Vector<String> links = (Vector<String>) result.get(4);
 
             for (int j = 0; j<links.size() || i<limit-1; j++, i++) {
-                crawlers.add(new Crawler(links.get(i)));
+                if(links.get(i).contains("cse.ust.hk")){
+                    crawlers.add(new Crawler(links.get(i)));
+                }
             }
         }
         return crawlers;
