@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
+import java.util.Scanner;
 
 import org.rocksdb.RocksDB;
 import org.rocksdb.Options;
@@ -102,30 +103,6 @@ public class CosSim {
         return cossim;
     }
 
-<<<<<<< HEAD
-    /*public static void main(String[] args) {
-         try{
-             RocksDB.loadLibrary();
-             Options options = new Options();
-             options.setCreateIfMissing(true);
-             RocksDB document = RocksDB.open(options, "db/document");
-             RocksDB invertedDocument = RocksDB.open(options, "db/invertedDocument");
-             RocksDB word = RocksDB.open(options, "db/word");
-             RocksDB invertedWord = RocksDB.open(options, "db/invertedWord");
-             RocksDB forwardIndex = RocksDB.open(options, "db/forwardIndex");
-             RocksDB titleInverted = RocksDB.open(options, "db/titleInverted");
-             RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
-
-             CosSim c= new CosSim("HKUST CSE", word, titleInverted, contentInverted, forwardIndex);
-             System.out.println(c.getPages(0.2));
-         }
-         catch(RocksDBException e)
-         {
-             System.err.println(e.toString());
-         }
-     }
-     */
-=======
     public static void main(String[] args) {
         try{
             RocksDB.loadLibrary();
@@ -149,7 +126,11 @@ public class CosSim {
             // System.out.println(new String(word.get("HKUST".getBytes())));
             // System.out.println(new String(word.get("SCHOOL".getBytes())));
 
-            CosSim c= new CosSim("HKUST MAKAN", word, titleInverted, contentInverted, forwardIndex);
+            String s;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Insert a string:");
+            s = sc.nextLine();
+            CosSim c= new CosSim( s, word, titleInverted, contentInverted, forwardIndex);
             System.out.println(c.getPages(0.2));
         }
         catch(RocksDBException e)
@@ -157,5 +138,4 @@ public class CosSim {
             System.err.println(e.toString());
         }
     }
->>>>>>> cfd5b02e8855bc1083b3101d29d98fb6d9839ad3
 }

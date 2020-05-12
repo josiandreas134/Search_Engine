@@ -37,12 +37,8 @@ public class SearchEngine {
             // Crawl
             System.out.println("Start crawling");
             Crawler crawler = new Crawler("https://www.cse.ust.hk/");
-<<<<<<< HEAD
-            Vector<Crawler> crawlers = crawler.crawlers(600, forwardIndex);
-=======
-            Vector<Crawler> crawlers = crawler.crawlers(2, forwardIndex);
->>>>>>> cfd5b02e8855bc1083b3101d29d98fb6d9839ad3
-            System.out.println("Finished crawling");
+            Vector<Crawler> crawlers = crawler.crawlers(100, forwardIndex);
+            System.out.println("Finished crawling "+crawlers.size());
 
             
             DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
@@ -68,7 +64,9 @@ public class SearchEngine {
             PageRankIndexer pagerank = new PageRankIndexer(PageRankIndex,invertedDocument, ParentChildIndex, ParentChildIndexInverted);
             pagerank.Initialize();
             pagerank.index_ranks();
+            pagerank.print_pageRankIndex();
             System.out.println("Finished making Page Rank index");
+
 
             // Output for PHASE I
             try {
