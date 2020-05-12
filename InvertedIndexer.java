@@ -99,11 +99,12 @@ public class InvertedIndexer
                 // System.out.println(wordID+"   "+refreshed);
                 
                 // if the page already exist, remove
-                if(((i == 0 && loc != -1) || rewrite) && !refreshed.contains(new String(wordID))) {
+                if(((i == 0 || rewrite) && loc != -1 ) && !refreshed.contains(new String(wordID))) {
                     int end_loc = loc+1;
                     while(end_loc < temp_val.length() && temp_val.charAt(end_loc) != 'd') {
                         end_loc++;
                     }
+                    System.out.println(loc+ " " + end_loc);
                     temp_val = temp_val.substring(0, loc) + temp_val.substring(end_loc);
                     loc = temp_val.indexOf(temp_pageID);
                     refreshed.add(new String(wordID));
@@ -155,7 +156,7 @@ public class InvertedIndexer
                 // System.out.println(new String(wordID)+"   "+refreshed+refreshed.contains(wordID));
                 
                 // if the page already exist, remove
-                if(((i == 0 && loc != -1) || rewrite) && !refreshed.contains(new String(wordID))) {
+                if(((i == 0 || rewrite) && loc != -1 ) && !refreshed.contains(new String(wordID))) {
                     int end_loc = loc+1;
                     while(end_loc < temp_val.length() && temp_val.charAt(end_loc) != 'd') {
                         end_loc++;
