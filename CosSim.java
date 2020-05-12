@@ -122,7 +122,7 @@ public class CosSim {
             System.out.println(new String(contentInverted.get("1".getBytes())));
             System.out.println(new String(contentInverted.get("2".getBytes())));
             System.out.println(new String(contentInverted.get("3".getBytes())));
-            System.out.println(new String(forwardIndex.get("1".getBytes())));
+            System.out.println(new String(forwardIndex.get("8".getBytes())));
             // System.out.println(new String(word.get("HKUST".getBytes())));
             // System.out.println(new String(word.get("SCHOOL".getBytes())));
 
