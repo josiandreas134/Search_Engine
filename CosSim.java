@@ -103,25 +103,26 @@ public class CosSim {
         return cossim;
     }
 
-    // public static void main(String[] args) {
-    //     try{
-    //         RocksDB.loadLibrary();
-    //         Options options = new Options();
-    //         options.setCreateIfMissing(true);
-    //         RocksDB document = RocksDB.open(options, "db/document");
-    //         RocksDB invertedDocument = RocksDB.open(options, "db/invertedDocument");
-    //         RocksDB word = RocksDB.open(options, "db/word");
-    //         RocksDB invertedWord = RocksDB.open(options, "db/invertedWord");
-    //         RocksDB forwardIndex = RocksDB.open(options, "db/forwardIndex");
-    //         RocksDB titleInverted = RocksDB.open(options, "db/titleInverted");
-    //         RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
+    /*public static void main(String[] args) {
+         try{
+             RocksDB.loadLibrary();
+             Options options = new Options();
+             options.setCreateIfMissing(true);
+             RocksDB document = RocksDB.open(options, "db/document");
+             RocksDB invertedDocument = RocksDB.open(options, "db/invertedDocument");
+             RocksDB word = RocksDB.open(options, "db/word");
+             RocksDB invertedWord = RocksDB.open(options, "db/invertedWord");
+             RocksDB forwardIndex = RocksDB.open(options, "db/forwardIndex");
+             RocksDB titleInverted = RocksDB.open(options, "db/titleInverted");
+             RocksDB contentInverted = RocksDB.open(options, "db/contentInverted");
 
-    //         CosSim c= new CosSim("HKUST CSE", word, titleInverted, contentInverted, forwardIndex);
-    //         System.out.println(c.getPages(0.2));
-    //     }
-    //     catch(RocksDBException e)
-    //     {
-    //         System.err.println(e.toString());
-    //     }
-    // }
+             CosSim c= new CosSim("HKUST CSE", word, titleInverted, contentInverted, forwardIndex);
+             System.out.println(c.getPages(0.2));
+         }
+         catch(RocksDBException e)
+         {
+             System.err.println(e.toString());
+         }
+     }
+     */
 }
