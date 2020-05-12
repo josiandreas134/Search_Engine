@@ -209,7 +209,7 @@ public class Crawler
         for (int i = 0, k = 0; i < num; i++, k++) {
             Vector<String> links_k = (Vector<String>) crawlers.get(k).parser().get(4);
             for (int j = 0; j < links_k.size() && i < num; j++, i++) {
-                if (document.get(links_k.get(j).getBytes()) != null) {
+                if (document.get(links_k.get(j).getBytes()) != null && links_k.get(j).contains("cse.ust.hk")) {
                     String data = new String(document.get(links_k.get(j).getBytes()));
                     Crawler temp = new Crawler(links_k.get(j));
                     Vector<String> date = (Vector<String>) temp.parser().get(1);
@@ -226,17 +226,23 @@ public class Crawler
         return crawlers;
     }
 
-    public Vector<Crawler> crawl(int limit) {
+    public Vector<Crawler> crawl(int limit, RocksDB document) throws RocksDBException  {
         Vector<Crawler> crawlers = new Vector<Crawler>();
         crawlers.add(new Crawler(this.url));
-        for(int i=0; i<limit-1; ) {
+        for(int i=0; i<crawlers.size() && i<limit-1;) {
             Vector result = crawlers.get(i).parser();
             Vector<String> links = (Vector<String>) result.get(4);
+            // System.out.println(links.get(i));
 
-            for (int j = 0; j<links.size() || i<limit-1; j++, i++) {
-                if(links.get(i).contains("cse.ust.hk")){
-                    crawlers.add(new Crawler(links.get(i)));
+            for (int j = 0; j<links.size() && i<limit-1; j++) {
+                if(links.get(j).contains("cse.ust.hk") && document.get((links.get(j)).getBytes()) == null){
+                    // System.out.println("include : "+links.get(j));
+                    crawlers.add(new Crawler(links.get(j)));
+                    i++;
                 }
+                // else {
+                //     System.out.println("Do not include : "+links.get(j));
+                // }
             }
         }
         return crawlers;

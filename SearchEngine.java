@@ -37,7 +37,7 @@ public class SearchEngine {
             // Crawl
             System.out.println("Start crawling");
             Crawler crawler = new Crawler("https://www.cse.ust.hk/");
-            Vector<Crawler> crawlers = crawler.crawlers(10, forwardIndex);
+            Vector<Crawler> crawlers = crawler.crawl(13600, forwardIndex);
             System.out.println("Finished crawling "+crawlers.size());
 
             DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
