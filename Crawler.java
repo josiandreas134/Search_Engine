@@ -234,12 +234,6 @@ public class Crawler
             Vector<String> links = (Vector<String>) result.get(4);
             // System.out.println(links.get(i));
 
-<<<<<<< HEAD
-            for (int j = 0; j<links.size() || i<limit-1; j++, i++) {
-                if(links.get(i).contains("cse.ust.hk")){
-                    crawlers.add(new Crawler(links.get(i)));
-                }
-=======
             for (int j = 0; j<links.size() && i<limit-1; j++) {
                 if(links.get(j).contains("cse.ust.hk") && document.get((links.get(j)).getBytes()) == null){
                     // System.out.println("include : "+links.get(j));
@@ -249,7 +243,6 @@ public class Crawler
                 // else {
                 //     System.out.println("Do not include : "+links.get(j));
                 // }
->>>>>>> a158753692f8fa1661f1647965d59d797514141e
             }
         }
         return crawlers;

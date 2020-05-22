@@ -26,6 +26,7 @@ public class PageRankIndexer {
     }
 
     public void Initialize() throws RocksDBException{
+        System.out.println("Initializing PageRank..");
         RocksIterator iter = invertedDocument.newIterator();
         for(iter.seekToFirst(); iter.isValid(); iter.next()){
            PageRankIndex.put((iter.key()),"1".getBytes());
@@ -43,6 +44,7 @@ public class PageRankIndexer {
 
     public void index_ranks() throws RocksDBException
     {
+        System.out.println("Computing PageRank..");
         Boolean Converge = false;
         int total = 0;
         int convergenum = 0;

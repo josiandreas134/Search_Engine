@@ -35,16 +35,13 @@ public class SearchEngine {
 
             
             // Crawl
+            
             System.out.println("Start crawling");
             Crawler crawler = new Crawler("https://www.cse.ust.hk/");
-<<<<<<< HEAD
-            Vector<Crawler> crawlers = crawler.crawlers(100, forwardIndex);
-=======
-            Vector<Crawler> crawlers = crawler.crawl(13600, forwardIndex);
->>>>>>> a158753692f8fa1661f1647965d59d797514141e
+            Vector<Crawler> crawlers = crawler.crawl(10, forwardIndex);
             System.out.println("Finished crawling "+crawlers.size());
 
-            
+            /*
             DocumentIndexer documentIndexer = new DocumentIndexer(crawlers, document, invertedDocument);
             documentIndexer.index_pages();
             System.out.println("Finished making document index");
@@ -52,15 +49,16 @@ public class SearchEngine {
             WordIndexer wordIndexer = new WordIndexer(crawlers, word, invertedWord);
             wordIndexer.index_words();
             System.out.println("Finished making word index");
-            
+            */
             ForwardIndexer forwardIndexer = new ForwardIndexer(crawlers, word, invertedWord, document, invertedDocument, forwardIndex);
             forwardIndexer.index_pages();
+            forwardIndexer.printAll();
             System.out.println("Finished making forward index");
-            
+            /*
             InvertedIndexer invertedIndexer = new InvertedIndexer(crawlers, word, invertedWord, document, invertedDocument, titleInverted, contentInverted);
-            invertedIndexer.index_pages();
+            invertedIndexer.print_contentInvIndex();
             System.out.println("Finished making inverted index");
-
+            
             ParentChildIndexer parentChildIndexer = new ParentChildIndexer(crawlers, document, invertedDocument, ParentChildIndex, ParentChildIndexInverted );
             parentChildIndexer.index_pages();
             System.out.println("Finished making parent->child && child->parent index");
@@ -70,9 +68,10 @@ public class SearchEngine {
             pagerank.index_ranks();
             pagerank.print_pageRankIndex();
             System.out.println("Finished making Page Rank index");
-
+            */
 
             // Output for PHASE I
+            /*
             try {
                 FileWriter myWriter = new FileWriter("spider_result.txt");
                 RocksIterator iter = forwardIndex.newIterator();
@@ -152,7 +151,7 @@ public class SearchEngine {
             //     System.out.println(crawlers.get(i).getURL());
             //     index.addEntry(crawlers.get(i));
             // }
-            // index.printAll();
+            // index.printAll();*/
         }
         catch(RocksDBException e)
         {
